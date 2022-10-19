@@ -18,30 +18,26 @@
     async function hosgeldin_mesaji(){
         await sleep(750)
         var giris_ekrani = document.createElement("div")
+        giris_ekrani.setAttribute("id","giris_ekran")
         giris_ekrani.width=cihaz_cozunurluk[1]
         giris_ekrani.height=cihaz_cozunurluk[0]
-        giris_ekrani.style.margin="0px"
         document.body.appendChild(giris_ekrani)
         var giris_resim = document.createElement("img")
+        giris_resim.setAttribute("id","giris_resim")
         giris_resim.src="STATIC/hosgeldiniz.png"
-        giris_resim.style.width="100%"
-        giris_resim.style.height="100%"
         giris_ekrani.appendChild(giris_resim)
         await sleep(2000)
         giris_resim.src="STATIC/giris_resim.png"
         await sleep(2500)
         document.body.removeChild(giris_ekrani)
         var ust_sekme = document.createElement("div")
-        ust_sekme.style.width="100%"
-        ust_sekme.style.height="5%"
-        ust_sekme.style.backgroundColor="black"
+        ust_sekme.setAttribute("id","ust_sekme")
         ust_sekme.innerText="selamselamselamselam"
         document.body.appendChild(ust_sekme)
         var ust_logo = document.createElement("img")
+        ust_logo.setAttribute("id","ust_logo")
         ust_logo.src="STATIC/logo.png"
-        ust_logo.style.width="10%"
         ust_sekme.appendChild(ust_logo)
-        
     }
     hosgeldin_mesaji()
 </script>

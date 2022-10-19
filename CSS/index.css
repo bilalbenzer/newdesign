@@ -1,0 +1,18 @@
+#giris_ekran{
+    margin: 0%;
+}
+#giris_resim{
+    width: 100%;
+    height: 100%;
+}
+#ust_sekme{
+    width: 100%;
+    height: 5%;
+    background-image: url("../STATIC/ustsekme.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#ust_logo{
+ width: 10%;
+}
