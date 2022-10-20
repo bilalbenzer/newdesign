@@ -6,13 +6,26 @@
     height: 100%;
 }
 #ust_sekme{
-    width: 100%;
-    height: 5%;
+    position: static;
     background-image: url("../STATIC/ustsekme.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    padding: 1px;
 }
 #ust_logo{
- width: 10%;
+float: left;
+height: 100%;
+}
+#ust_metin{
+    position: static;
+    width: 100%;
+    text-align: center;
+    font-style: normal;
+    font-family: "Delius Unicase";
+    color: white;
+    font-size: 300%;
+    margin-top: 8px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;    
 }

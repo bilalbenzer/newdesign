@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="CSS/index.css">
         <title>ANASAYFA</title>
         <link rel="icon" href="STATIC/icon.png">
+        <link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
     </head>
-    <body style="margin: 0px;">
+    <body  id="govde" style="margin: 0px;margin-top: 0px;background-color: black;">
     </body>
 </html>
 <script>
@@ -15,6 +16,10 @@
     return new Promise(resolve => setTimeout(resolve, ms));
     }
     var cihaz_cozunurluk = [window.innerHeight,window.innerWidth]
+    document.getElementById("govde").style.width=cihaz_cozunurluk[1]+"px"
+    document.getElementById("govde").style.height=cihaz_cozunurluk[0]+"px"
+    console.log(document.body)
+    console.log(cihaz_cozunurluk)
     async function hosgeldin_mesaji(){
         await sleep(750)
         var giris_ekrani = document.createElement("div")
@@ -26,16 +31,24 @@
         giris_resim.setAttribute("id","giris_resim")
         giris_resim.src="STATIC/giris.gif"
         giris_ekrani.appendChild(giris_resim)
-        await sleep(4500)
+        /* await sleep(4500) */
         document.body.removeChild(giris_ekrani)
         var ust_sekme = document.createElement("div")
         ust_sekme.setAttribute("id","ust_sekme")
-        ust_sekme.innerText="selamselamselamselam"
         document.body.appendChild(ust_sekme)
+        document.getElementById("ust_sekme").style.width=cihaz_cozunurluk[1]+"px"
+        document.getElementById("ust_sekme").style.height=cihaz_cozunurluk[0]*7.5/100+"px"
         var ust_logo = document.createElement("img")
         ust_logo.setAttribute("id","ust_logo")
         ust_logo.src="STATIC/logo.png"
         ust_sekme.appendChild(ust_logo)
+        var ust_metin = document.createElement("p")
+        ust_metin.setAttribute("id","ust_metin")
+        ust_metin.innerText="3DM WEB-CBS UYGULAMASI"
+        ust_sekme.appendChild(ust_metin)
+
     }
     hosgeldin_mesaji()
+
+
 </script>
