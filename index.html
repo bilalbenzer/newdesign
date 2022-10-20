@@ -24,11 +24,9 @@
         document.body.appendChild(giris_ekrani)
         var giris_resim = document.createElement("img")
         giris_resim.setAttribute("id","giris_resim")
-        giris_resim.src="STATIC/hosgeldiniz.png"
+        giris_resim.src="STATIC/giris.gif"
         giris_ekrani.appendChild(giris_resim)
-        await sleep(2000)
-        giris_resim.src="STATIC/giris_resim.png"
-        await sleep(2500)
+        await sleep(4500)
         document.body.removeChild(giris_ekrani)
         var ust_sekme = document.createElement("div")
         ust_sekme.setAttribute("id","ust_sekme")
