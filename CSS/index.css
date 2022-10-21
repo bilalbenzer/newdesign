@@ -8,8 +8,7 @@
 #ust_sekme{
     position: static;
     background-color: black;
-    font-style: normal;
-    border-bottom: 1px white solid;
+    
 }
 #ust_logo{
 float: left;
@@ -17,6 +16,8 @@ margin-left: 5%;
 height: 100%;
 }
 .ust_butonlar{
+    position: static;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
     float: left;
     width: auto;
     height: 100%;
