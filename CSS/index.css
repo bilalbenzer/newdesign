@@ -31,3 +31,10 @@ height: 100%;
     border-radius: 30%;
     cursor: pointer;
 }
+.dil_button{
+    position: static;
+    float: right;
+    cursor: pointer;
+    height: 50%;
+    margin-right: 3%;
+}
