@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="CSS/index.css">
         <title>ANASAYFA</title>
         <link rel="icon" href="STATIC/icon.png">
-        <link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
+,
     </head>
     <body  id="govde" style="margin: 0px;margin-top: 0px;background-color: black;">
     </body>
@@ -42,11 +42,22 @@
         ust_logo.setAttribute("id","ust_logo")
         ust_logo.src="STATIC/logo.png"
         ust_sekme.appendChild(ust_logo)
-        var ust_metin = document.createElement("p")
-        ust_metin.setAttribute("id","ust_metin")
-        ust_metin.innerText="3DM WEB-CBS UYGULAMASI"
-        ust_sekme.appendChild(ust_metin)
-
+        var buton1 = document.createElement("button")
+        buton1.setAttribute("class","ust_butonlar")
+        buton1.innerText="CBS PORTAL"
+        ust_sekme.appendChild(buton1)
+        var buton1 = document.createElement("button")
+        buton1.setAttribute("class","ust_butonlar")
+        buton1.innerText="KULLANIM\nREHBERİ"
+        ust_sekme.appendChild(buton1)
+        var buton1 = document.createElement("button")
+        buton1.setAttribute("class","ust_butonlar")
+        buton1.innerText="HAKKIMIZDA"
+        ust_sekme.appendChild(buton1)
+        var buton1 = document.createElement("button")
+        buton1.setAttribute("class","ust_butonlar")
+        buton1.innerText="İLETİŞİM"
+        ust_sekme.appendChild(buton1)
     }
     hosgeldin_mesaji()
 
