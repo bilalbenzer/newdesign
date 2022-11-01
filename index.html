@@ -66,6 +66,7 @@
         ust_sekme.appendChild(buton2)
         gelistirmeler.setAttribute("id","gelistirmeler_ekrani")
         gelistirmeler.setAttribute("name","gelistirme_ekrani")
+        gelistirmeler.style.fontSize="25px"
         document.body.appendChild(gelistirmeler)
         div_secim = document.getElementById("gelistirmeler_ekrani")
     }
@@ -75,7 +76,7 @@
 
 
 
-    var gelistirme_listesi = ["18.08.2022-Geotiff Ekleme Eklendi. Geliştirmeler Devame Edecek.",
+    var gelistirme_listesi = ["18.08.2022-Geotiff Ekleme Eklendi. Geliştirmeler Devame Edecek.-----------------------------------------------------------------------------------",
             "16.08.2022-Web Sitesine 2. Dil Olarak İngilizce Dili Yerleştirildi",
             "16.08.2022-Web Sitesine İngilizce Dil Seçeneği Eklendi ve Çevirilere Başlanıldı",
             "13.08.2022-Dışarıya .geojson dosyasının aktarılması tamamlandı.Shapefile aktarım işlemleri devam etmekte.",
@@ -106,16 +107,23 @@
         dugme_1.src="STATIC/dugme_ok_2.png"
         dugme_1.setAttribute("class","gelistirme_dugmesi")
         dugme_1.style.float="left"
+        dugme_1.style.marginLeft="3%"
         gelistirmeler.appendChild(dugme_1)
         var dugme_2 = document.createElement("img")
         dugme_2.src="STATIC/dugme_ok.png"
         dugme_2.setAttribute("class","gelistirme_dugmesi")
         dugme_2.style.float="right"
+        dugme_2.style.marginRight="3%"
         gelistirmeler.appendChild(dugme_2)
         var sira_no = 0
         while (true){ 
             var metin = document.createTextNode(gelistirme_listesi[sira_no])
+
             gelistirmeler.appendChild(metin)
+            dugme_1.style.height=gelistirmeler.clientHeight+"px"
+            dugme_1.style.width=gelistirmeler.clientHeight+"px"
+            dugme_2.style.height=gelistirmeler.clientHeight+"px"
+            dugme_2.style.width=gelistirmeler.clientHeight+"px"
             await sleep(2000)
             gelistirmeler.removeChild(metin)
             sira_no+=1
@@ -126,5 +134,5 @@
         
     }
 
-    gelistirme_ekrani()
+    gelistirme_ekrani()    
 </script>

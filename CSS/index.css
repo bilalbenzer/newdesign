@@ -39,15 +39,18 @@ height: 100%;
     margin-right: 3%;
 }
 #gelistirmeler_ekrani{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;   
     width: 100%;
     color: black;
     height:auto;
-    font-size: 30px;
     margin-top: 20px;
     background-color: white;
     text-align: center;
-    font-weight: bolder;
+    font-weight:lighter;
+    align-items: center;
+
 }
 .gelistirme_dugmesi{
-    height: 40px;
+    width: 1.6%;
+    cursor: pointer;;
 }
