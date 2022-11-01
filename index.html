@@ -29,7 +29,7 @@
         giris_resim.setAttribute("id","giris_resim")
         giris_resim.src="STATIC/giris.gif"
         giris_ekrani.appendChild(giris_resim)
-        /* await sleep(4500) */
+        await sleep(4500)
         document.body.removeChild(giris_ekrani)
         var ust_sekme = document.createElement("div")
         ust_sekme.setAttribute("id","ust_sekme")
@@ -66,17 +66,14 @@
         ust_sekme.appendChild(buton2)
         gelistirmeler.setAttribute("id","gelistirmeler_ekrani")
         gelistirmeler.setAttribute("name","gelistirme_ekrani")
-        gelistirmeler.style.fontSize="25px"
+        gelistirmeler.style.fontSize=cihaz_cozunurluk[0]*2/100+"px"
         document.body.appendChild(gelistirmeler)
         div_secim = document.getElementById("gelistirmeler_ekrani")
     }
     var gelistirmeler=document.createElement("div")
     hosgeldin_mesaji()
-    
 
-
-
-    var gelistirme_listesi = ["18.08.2022-Geotiff Ekleme Eklendi. Geliştirmeler Devame Edecek.-----------------------------------------------------------------------------------",
+    var gelistirme_listesi = ["18.08.2022 Geotiff Ekleme Eklendi.",
             "16.08.2022-Web Sitesine 2. Dil Olarak İngilizce Dili Yerleştirildi",
             "16.08.2022-Web Sitesine İngilizce Dil Seçeneği Eklendi ve Çevirilere Başlanıldı",
             "13.08.2022-Dışarıya .geojson dosyasının aktarılması tamamlandı.Shapefile aktarım işlemleri devam etmekte.",
@@ -102,37 +99,70 @@
             "25.04.2022-Nokta Objesi Eklenebilir, Düzenlenebilir, Simge Verilebilir, Öznitelik Eklenebilir Hale Getirildi",
             "30.03.2022-Harita Servisleri Kullanılabilir Hale Getirildi",
             "01.03.2022-Web Tasarımına Başlanıldı",]
+    
     async function gelistirme_ekrani(){
+        await sleep(5000)
+        var metin
+        var sira_no = 0
         var dugme_1 = document.createElement("img")
         dugme_1.src="STATIC/dugme_ok_2.png"
         dugme_1.setAttribute("class","gelistirme_dugmesi")
         dugme_1.style.float="left"
         dugme_1.style.marginLeft="3%"
+        dugme_1.onclick=async function (){
+            if (sira_no>0){
+                sira_no-=1
+                gelistirmeler.removeChild(metin)
+                metin = document.createTextNode(gelistirme_listesi[sira_no])
+                gelistirmeler.appendChild(metin)
+                dugme_1.style.height=gelistirmeler.clientHeight+"px"
+                dugme_1.style.width=gelistirmeler.clientHeight+"px"
+                dugme_2.style.height=gelistirmeler.clientHeight+"px"
+                dugme_2.style.width=gelistirmeler.clientHeight+"px"
+                sira_no+=1
+            }
+        }
         gelistirmeler.appendChild(dugme_1)
         var dugme_2 = document.createElement("img")
         dugme_2.src="STATIC/dugme_ok.png"
         dugme_2.setAttribute("class","gelistirme_dugmesi")
         dugme_2.style.float="right"
         dugme_2.style.marginRight="3%"
+        dugme_2.onclick=async function (){
+            if (sira_no<gelistirme_listesi.length){
+                sira_no+=1
+                gelistirmeler.removeChild(metin)
+                metin = document.createTextNode(gelistirme_listesi[sira_no])
+                gelistirmeler.appendChild(metin)
+                dugme_1.style.height=gelistirmeler.clientHeight+"px"
+                dugme_1.style.width=gelistirmeler.clientHeight+"px"
+                dugme_2.style.height=gelistirmeler.clientHeight+"px"
+                dugme_2.style.width=gelistirmeler.clientHeight+"px"
+                sira_no-=1
+            }
+        }
         gelistirmeler.appendChild(dugme_2)
-        var sira_no = 0
+        
         while (true){ 
-            var metin = document.createTextNode(gelistirme_listesi[sira_no])
-
+            try{
+            gelistirmeler.removeChild(metin)
+            }
+            catch{
+            }
+            metin = document.createTextNode(gelistirme_listesi[sira_no])
             gelistirmeler.appendChild(metin)
             dugme_1.style.height=gelistirmeler.clientHeight+"px"
             dugme_1.style.width=gelistirmeler.clientHeight+"px"
             dugme_2.style.height=gelistirmeler.clientHeight+"px"
             dugme_2.style.width=gelistirmeler.clientHeight+"px"
-            await sleep(2000)
-            gelistirmeler.removeChild(metin)
+            await sleep(3000)
             sira_no+=1
             if (sira_no===gelistirme_listesi.length){
                 sira_no=0
-            }
+            }   
         }
         
     }
 
-    gelistirme_ekrani()    
+    gelistirme_ekrani()
 </script>
