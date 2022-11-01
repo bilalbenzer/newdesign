@@ -20,7 +20,7 @@ height: 100%;
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     float: left;
     width: auto;
-    height: 100%;
+    height: auto;
     margin-left: 3%;
     background-image: url(../STATIC/butonpic.png);
     color: aliceblue;
@@ -37,4 +37,17 @@ height: 100%;
     cursor: pointer;
     width: 5%;
     margin-right: 3%;
+}
+#gelistirmeler_ekrani{
+    width: 100%;
+    color: black;
+    height:auto;
+    font-size: 30px;
+    margin-top: 20px;
+    background-color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+.gelistirme_dugmesi{
+    height: 40px;
 }

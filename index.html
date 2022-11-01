@@ -18,8 +18,6 @@
     var cihaz_cozunurluk = [window.innerHeight,window.innerWidth]
     document.getElementById("govde").style.width=cihaz_cozunurluk[1]+"px"
     document.getElementById("govde").style.height=cihaz_cozunurluk[0]+"px"
-    console.log(document.body)
-    console.log(cihaz_cozunurluk)
     async function hosgeldin_mesaji(){
         await sleep(750)
         var giris_ekrani = document.createElement("div")
@@ -66,8 +64,67 @@
         buton2.src="STATIC/language_icon.png"
         buton2.setAttribute("class","dil_button")
         ust_sekme.appendChild(buton2)
+        gelistirmeler.setAttribute("id","gelistirmeler_ekrani")
+        gelistirmeler.setAttribute("name","gelistirme_ekrani")
+        document.body.appendChild(gelistirmeler)
+        div_secim = document.getElementById("gelistirmeler_ekrani")
     }
+    var gelistirmeler=document.createElement("div")
     hosgeldin_mesaji()
+    
 
 
+
+    var gelistirme_listesi = ["18.08.2022-Geotiff Ekleme Eklendi. Geliştirmeler Devame Edecek.",
+            "16.08.2022-Web Sitesine 2. Dil Olarak İngilizce Dili Yerleştirildi",
+            "16.08.2022-Web Sitesine İngilizce Dil Seçeneği Eklendi ve Çevirilere Başlanıldı",
+            "13.08.2022-Dışarıya .geojson dosyasının aktarılması tamamlandı.Shapefile aktarım işlemleri devam etmekte.",
+            "11.08.2022-Dışarıdan .shp ve .kml dosya tiplerini alma işlemi tammalandı. Diğer Dosya Türleri İçin Geliştirmeler Devam etmekte.",
+            "09.08.2022-Çokgen ile ilgili işlemler tamamlandı. Vektör veri yükleme işlemlerine başlanıldı",
+            "03.08.2022-Çokgen Çizimi İle İlgili İşlemlere Başlanıldı",
+            "01.08.2022-Çoklu Çizgi İle İlgili İşlemler Tamamlandı. Özellik Geliştirmeleri Devam Edecek.",
+            "29.07.2022-Çoklu Çizgi Çizimi, Haritada Gösterme-Gizleme,Katman Düzenleme(köşe noktası silme,Ara Nokta Ekleme ve Kaydırmaw) Geliştirildi",
+            "26.07.2022-Çoklu Çizgi İçin Geliştirmelere Başlanıldı",
+            "25.07.2022-Çoklu Nokta Katmanı İle İlgili İşlemler Tamamlandı",
+            "07.07.2022-Çoklu Nokta Katmanında Url ve Yerel Simgeleri Obje Stili Olarak Ayarlama Tamamlandı.Simge Büyüklüklüklerinin Değiştirilmesi Geliştirilmekte",
+            "04.07.2022-Çoklu Nokta Katmanında Özniteliğe Bağlı Renge ve Büyüklüğe Göre Sınıflandırma İşlemi Tamamlandı",
+            "29.06.2022-Çoklu Nokta Katmanında Öznitelik Tablosu İle İlgili İşlemler(Nitelik Ekleme,Düzenleme,Silme,Kolon Ekleme,Düzenleme) Tamamlandı",
+            "27.06.2022-Çoklu Nokta Katmanında Öznitelik Tablosunun Görüntülenmesi, Kolon ve Nitelik Eklenmesi/Silinmesi/Özellikleri Görme İşlemlerine Başlanıldı",
+            "24.06.2022-Çoklu Nokta Katmanında Seçilen Noktaların Silme İşlemi Tamamlandı",
+            "20.06.2022-Çoklu Nokta Katmanında Manuel Koordinat Girerek Nokta Taşıma İşlevi Tamamlandı",
+            "20.06.2022-Çoklu Nokta katmanında Fare İle Nokta Taşıma İşlevi Tamamlandı",
+            "17.06.2022-Çoklu Nokta İçin Düzeltmeler ve Geliştirmeler Yapıldı",
+            "16.06.2022-Nokta Objesinin Düzenlenmesinde Koordinat Girerek Düzenleme İşlevi Güncellendi",
+            "15.06.2022-Çoklu Noktalar İçin Haritada Obje Seçerek Düzenleme Özelliği Geliştirilmeye Başlanıldı.",
+            "15.06.2022-Çoklu Nokta Objesi Oluşturma,Haritada Gizleme, Gösterme,Yaklaşma Tamamlandı",
+            "20.05.2022-Farklı Koordinasyon Sistemleri Entegresi Yapıldı. Geliştirmeler Devam Edecek...",
+            "25.04.2022-Nokta Objesi Eklenebilir, Düzenlenebilir, Simge Verilebilir, Öznitelik Eklenebilir Hale Getirildi",
+            "30.03.2022-Harita Servisleri Kullanılabilir Hale Getirildi",
+            "01.03.2022-Web Tasarımına Başlanıldı",]
+    async function gelistirme_ekrani(){
+        var dugme_1 = document.createElement("img")
+        dugme_1.src="STATIC/dugme_ok_2.png"
+        dugme_1.setAttribute("class","gelistirme_dugmesi")
+        dugme_1.style.float="left"
+        gelistirmeler.appendChild(dugme_1)
+        var dugme_2 = document.createElement("img")
+        dugme_2.src="STATIC/dugme_ok.png"
+        dugme_2.setAttribute("class","gelistirme_dugmesi")
+        dugme_2.style.float="right"
+        gelistirmeler.appendChild(dugme_2)
+        var sira_no = 0
+        while (true){ 
+            var metin = document.createTextNode(gelistirme_listesi[sira_no])
+            gelistirmeler.appendChild(metin)
+            await sleep(2000)
+            gelistirmeler.removeChild(metin)
+            sira_no+=1
+            if (sira_no===gelistirme_listesi.length){
+                sira_no=0
+            }
+        }
+        
+    }
+
+    gelistirme_ekrani()
 </script>
