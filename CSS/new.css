@@ -1,0 +1,17 @@
+#govde{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+#karsilama{
+    position: static;
+    background-color: black;    
+    width: 100%;
+    height: 100%;
+    content: normal;
+}
+#karsilama_img{
+    height: 100%;
+}

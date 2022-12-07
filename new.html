@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="CSS/new.css">
+        <title>ANASAYFA</title>
+        <link rel="icon" href="STATIC/icon.png">
+,
+    </head>
+    <body  id="govde">
+        <div id="karsilama">
+            <img id="karsilama_img" src="STATIC/giris.png" alt="Hoşgeldiniz.">
+        </div>
+    </body>
+    <script>
+        function sleep(ms)  {
+        return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function baslangic(){
+                var x = [1,2,3,4,5]
+                for (var i in x){
+                    if(i==0){
+                        await sleep(750)
+                        document.getElementById("govde").style.backgroundColor="#FF0000"
+                        document.getElementById("karsilama").style.backgroundColor="#FF0000"
+                    
+                    }
+                    else if(i==1){
+                        await sleep(750)
+                        document.getElementById("govde").style.backgroundColor="#FFFF00"
+                        document.getElementById("karsilama").style.backgroundColor="#FFFF00"
+                    }
+                    else if(i==2){
+                        await sleep(750)
+                        document.getElementById("govde").style.backgroundColor="#00FFFF"
+                        document.getElementById("karsilama").style.backgroundColor="#00FFFF"
+                    }
+                    else if(i==3){
+                        await sleep(750)
+                        document.getElementById("govde").style.backgroundColor="#FFFFFF"
+                        document.getElementById("karsilama").style.backgroundColor="#FFFFFF"
+                    }
+                    else{
+                        await sleep(750)
+                        /* document.getElementById("govde").style.backgroundColor="#000000" */
+                        document.getElementById("karsilama").remove()
+                    }
+                }
+            }
+        baslangic()
+
+    </script>
